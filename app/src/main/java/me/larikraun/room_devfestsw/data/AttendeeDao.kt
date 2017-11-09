@@ -17,7 +17,7 @@ interface AttendeeDao {
     @Update
     fun update(attendee: Attendee)
 
-    @Query("Select * from attendeess where email=:email")
+    @Query("Select * from attendee where email=:arg0")
     fun getAttendedByEmail(email: String): Attendee
 
     @Query("Select * from attendee")
