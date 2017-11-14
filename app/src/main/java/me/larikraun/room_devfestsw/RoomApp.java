@@ -9,14 +9,14 @@ import me.larikraun.room_devfestsw.data.AppDatabase;
  * Author: Omolara Adejuwon
  * Date: 11/8/17.
  */
-class RoomApp extends Application {
+public class RoomApp extends Application {
 	public static AppDatabase database;
 	
 	@Override
 	public void onCreate () {
 		super.onCreate ();
-		database = Room.databaseBuilder (this, AppDatabase.class, "devfestsw.db").build ();
+		database = Room.databaseBuilder (this, AppDatabase.class, "devfestsw-java.db")
+				//.addMigrations (AppDatabase.MIGRATION_1_2)
+				.build ();
 	}
-	
-	
 }

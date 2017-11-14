@@ -4,6 +4,8 @@ import android.arch.persistence.room.ColumnInfo;
 import android.arch.persistence.room.Entity;
 import android.arch.persistence.room.PrimaryKey;
 
+import java.util.Objects;
+
 /**
  * Author: Omolara Adejuwon
  * Date: 11/8/17.
@@ -62,4 +64,5 @@ public class Attendee {
 	public void setCategory (String category) {
 		this.category = category;
 	}
+	
 }

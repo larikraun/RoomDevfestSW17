@@ -62,7 +62,7 @@ class MainActivity extends AppCompatActivity {
 		protected List<Attendee> doInBackground (Void... voids) {
 			
 			List<Attendee> attendees = RoomApp.database.attendeeDao ().getAllAttendees ();
-			if (!attendees.isEmpty ()) {
+			if (attendees.isEmpty ()) {
 				Attendee attendee = new Attendee (1, "Omolara 'java' Adejuwon", "omolara.adejuwon", "Speaker");
 				RoomApp.database.attendeeDao ().insert (attendee);
 				return RoomApp.database.attendeeDao ().getAllAttendees ();
