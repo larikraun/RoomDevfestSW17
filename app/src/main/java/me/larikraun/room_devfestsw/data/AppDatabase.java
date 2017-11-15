@@ -10,7 +10,7 @@ import android.support.annotation.NonNull;
  * Author: Omolara Adejuwon
  * Date: 11/8/17.
  */
-@Database(entities = {Attendee.class}, version = 1)
+@Database(entities = {Attendee.class}, version = 2)
 
 public abstract class AppDatabase extends RoomDatabase {
 	public abstract AttendeeDao attendeeDao ();

@@ -16,7 +16,7 @@ public class RoomApp extends Application {
 	public void onCreate () {
 		super.onCreate ();
 		database = Room.databaseBuilder (this, AppDatabase.class, "devfestsw-java.db")
-				//.addMigrations (AppDatabase.MIGRATION_1_2)
+				.addMigrations (AppDatabase.MIGRATION_1_2)
 				.build ();
 	}
 }

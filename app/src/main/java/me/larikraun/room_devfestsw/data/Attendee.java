@@ -2,6 +2,7 @@ package me.larikraun.room_devfestsw.data;
 
 import android.arch.persistence.room.ColumnInfo;
 import android.arch.persistence.room.Entity;
+import android.arch.persistence.room.Ignore;
 import android.arch.persistence.room.PrimaryKey;
 
 import java.util.Objects;
@@ -20,6 +21,9 @@ public class Attendee {
 	@ColumnInfo(name = "email")
 	private String email;
 	private String category;
+	@ColumnInfo(name = "phone_number")
+	//@Ignore
+	private String phoneNumber;
 	
 	public Attendee (int id, String name, String email, String category) {
 		this.id = id;
@@ -65,4 +69,11 @@ public class Attendee {
 		this.category = category;
 	}
 	
+	public String getPhoneNumber () {
+		return phoneNumber;
+	}
+	
+	public void setPhoneNumber (String phoneNumber) {
+		this.phoneNumber = phoneNumber;
+	}
 }
