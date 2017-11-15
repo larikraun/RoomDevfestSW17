@@ -28,6 +28,7 @@ import static org.junit.Assert.assertEquals;
 public class MigrationTest {
 	private static Attendee ATTENDEE = new Attendee (1, "Anifowoshe Kareem", "kareem@ani.com", "Participant");
 	
+	
 	private static final String DB_NAME = "test_attendee_db_name";
 	@Rule
 	public MigrationTestHelper mMigrationTestHelper =
@@ -37,7 +38,7 @@ public class MigrationTest {
 	
 	@Before
 	public void setUp () throws Exception {
-	
+	ATTENDEE.setPhoneNumber ("01234567891");
 	}
 	
 	@Test
@@ -76,6 +77,7 @@ public class MigrationTest {
 		values.put ("name", ATTENDEE.getName ());
 		values.put ("email", ATTENDEE.getEmail ());
 		values.put ("category", ATTENDEE.getCategory ());
+		values.put ("phone_number",ATTENDEE.getPhoneNumber ());
 		
 		db.insert ("attendee", SQLiteDatabase.CONFLICT_REPLACE, values);
 		db.close ();
