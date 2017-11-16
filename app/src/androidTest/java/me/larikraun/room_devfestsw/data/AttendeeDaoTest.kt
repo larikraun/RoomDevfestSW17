@@ -33,6 +33,15 @@ class AttendeeDaoTest {
         assertEquals(ATTENDEE.name, attendees.get(0).name)
     }
 
+    @Test
+    fun insert_retrieveByEmail_hasCorrectData() {
+        database.attendeeDao().insert(ATTENDEE)
+
+        val attendees = database.attendeeDao().getAttendeesByEmail(ATTENDEE.email)
+
+        assertEquals(ATTENDEE.name, attendees.name)
+    }
+
     @After
     fun closeDb() {
         database.close()
