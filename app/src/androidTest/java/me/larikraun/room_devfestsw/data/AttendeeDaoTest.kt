@@ -24,7 +24,7 @@ class AttendeeDaoTest {
     }
 
     @Test
-    fun insert_retrieveAll_containsCorrectSize() {
+    fun insert_retrieveAll_hasCorrectSize() {
         database.attendeeDao().insert(ATTENDEE)
 
         val attendees = database.attendeeDao().getAllAttendees()
