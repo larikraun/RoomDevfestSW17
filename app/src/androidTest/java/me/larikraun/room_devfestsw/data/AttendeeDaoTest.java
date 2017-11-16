@@ -42,7 +42,7 @@ public class AttendeeDaoTest {
 	public void insert_retrieveByEmail_hasCorrectData () {
 		database.attendeeDao ().insert (ATTENDEE);
 		
-		Attendee attendee = database.attendeeDao ().getAttendedByEmail (ATTENDEE.getEmail ());
+		Attendee attendee = database.attendeeDao ().getAttendeesByEmail (ATTENDEE.getEmail ());
 		
 		assertEquals (ATTENDEE.getId (), attendee.getId ());
 	}

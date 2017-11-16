@@ -24,7 +24,7 @@ public interface AttendeeDao {
 	void update (Attendee attendee);
 	
 	@Query("Select * from attendee where email=:email")
-	Attendee getAttendedByEmail (String email);
+	Attendee getAttendeesByEmail (String email);
 	
 	@Query("Select * from attendee")
 	 List<Attendee> getAllAttendees ();

@@ -61,7 +61,7 @@ public class MigrationTest {
 		mMigrationTestHelper.runMigrationsAndValidate (DB_NAME, 2, true,
 				MIGRATION_1_2);
 		
-		Attendee attendee = getMigratedRoomDatabase ().attendeeDao ().getAttendedByEmail (ATTENDEE.getEmail ());
+		Attendee attendee = getMigratedRoomDatabase ().attendeeDao ().getAttendeesByEmail (ATTENDEE.getEmail ());
 		assertEquals (ATTENDEE.getId (), attendee.getId ());
 		
 		assertEquals (ATTENDEE.getName (), attendee.getName ());
@@ -83,7 +83,7 @@ public class MigrationTest {
 		db.close ();
 		
 		// verify that the data is correct
-		Attendee attendee = getMigratedRoomDatabase ().attendeeDao ().getAttendedByEmail (ATTENDEE.getEmail ());
+		Attendee attendee = getMigratedRoomDatabase ().attendeeDao ().getAttendeesByEmail (ATTENDEE.getEmail ());
 		assertEquals (ATTENDEE.getId (), attendee.getId ());
 		assertEquals (ATTENDEE.getPhoneNumber (), attendee.getPhoneNumber ());
 	}
