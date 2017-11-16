@@ -1,7 +1,6 @@
 package me.larikraun.room_devfestsw.data;
 
 import android.arch.persistence.room.Room;
-import android.content.Context;
 import android.support.test.InstrumentationRegistry;
 import android.support.test.runner.AndroidJUnit4;
 
@@ -22,7 +21,7 @@ import static org.junit.Assert.assertEquals;
 public class AttendeeDaoTest {
 	
 	private static Attendee ATTENDEE = new Attendee (1, "Anifowoshe Kareem", "kareem@ani.com", "Participant");
-	AppDatabase database;
+	private AppDatabase database;
 	
 	@Before
 	public void initDb () {
@@ -32,14 +31,7 @@ public class AttendeeDaoTest {
 	}
 	
 	@Test
-	public void useAppContext () {
-		// Context of the app under test.
-		Context appContext = InstrumentationRegistry.getTargetContext ();
-		assertEquals ("me.larikraun.room_devfestsw.java", appContext.getPackageName ());
-	}
-	
-	@Test
-	public void insert () throws Exception {
+	public void insert_retrieveAll_hasCorrectSize () {
 		database.attendeeDao ().insert (ATTENDEE);
 		List<Attendee> attendees = database.attendeeDao ().getAllAttendees ();
 		assertEquals (1, attendees.size ());
@@ -47,23 +39,12 @@ public class AttendeeDaoTest {
 	}
 	
 	@Test
-	public void delete () throws Exception {
-	}
-	
-	@Test
-	public void update () throws Exception {
-	}
-	
-	@Test
-	public void getAttendedByEmail () throws Exception {
+	public void insert_retrieveByEmail_hasCorrectData () {
 		database.attendeeDao ().insert (ATTENDEE);
+		
 		Attendee attendee = database.attendeeDao ().getAttendedByEmail (ATTENDEE.getEmail ());
 		
 		assertEquals (ATTENDEE.getId (), attendee.getId ());
-	}
-	
-	@Test
-	public void getAllAttendees () throws Exception {
 	}
 	
 	@After
