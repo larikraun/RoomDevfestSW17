@@ -46,7 +46,7 @@ class MainActivity : AppCompatActivity() {
             val attendees = ArrayList(RoomApp.database.attendeeDao().getAllAttendees())
 
             if (attendees.isEmpty()) {
-                val attendee = Attendee(1, "Omolara Adejuwon", "omolara.adejuwon", "Speaker")
+                val attendee = Attendee(1, "Omolara Adejuwon", "omolara.adejuwon", "Speaker", "")
                 RoomApp.database.attendeeDao().insert(attendee)
                 return ArrayList(RoomApp.database.attendeeDao().getAllAttendees())
             }
