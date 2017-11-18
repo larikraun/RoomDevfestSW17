@@ -13,7 +13,7 @@ import android.arch.persistence.room.PrimaryKey
 data class Attendee (@PrimaryKey(autoGenerate = true) @ColumnInfo(name = "id") var id: Int = 0,
                     @ColumnInfo(name = "name") var name: String = "",
                     @ColumnInfo(name = "email") var email: String = "",
-                    var category: String = "", @ColumnInfo(name = "phone_number") var phoneNumber: String="") {
+                    var category: String = "", @ColumnInfo(name = "phone_number") var phoneNumber: String?="") {
 
     override fun toString(): String = name + " " + email
 

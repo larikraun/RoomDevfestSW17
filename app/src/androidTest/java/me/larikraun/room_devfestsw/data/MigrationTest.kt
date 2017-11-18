@@ -21,13 +21,13 @@ import org.junit.runner.RunWith
  */
 @RunWith(AndroidJUnit4::class)
 class MigrationTest {
-    private val ATTENDEE = Attendee(1, "Anifowoshe Kareem", "kareem@ani.com", "Participant")
+    private val ATTENDEE = Attendee(1, "Anifowoshe Kareem", "kareem@ani.com", "Participant", null)
 
 
     private val DB_NAME = "test_attendee_db_name"
 
     @get:Rule
-   public val mMigrationTestHelper = MigrationTestHelper(InstrumentationRegistry.getInstrumentation(),
+    public val mMigrationTestHelper = MigrationTestHelper(InstrumentationRegistry.getInstrumentation(),
             AppDatabase::class.java.canonicalName,
             FrameworkSQLiteOpenHelperFactory())
 
@@ -53,7 +53,7 @@ class MigrationTest {
         assertEquals(ATTENDEE.id, attendee.id)
 
         assertEquals(ATTENDEE.name, attendee.name)
-        assertEquals(attendee.phoneNumber, "nothing")
+        assertEquals(attendee.phoneNumber, null)
     }
 
     @Test
