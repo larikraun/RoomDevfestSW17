@@ -22,7 +22,6 @@ public class Attendee {
 	private String email;
 	private String category;
 	@ColumnInfo(name = "phone_number")
-	//@Ignore
 	private String phoneNumber;
 	
 	public Attendee (int id, String name, String email, String category) {
