@@ -63,7 +63,8 @@ class MainActivity extends AppCompatActivity {
 			
 			List<Attendee> attendees = RoomApp.database.attendeeDao ().getAllAttendees ();
 			if (attendees.isEmpty ()) {
-				Attendee attendee = new Attendee (1, "Omolara 'java' Adejuwon", "omolara.adejuwon", "Speaker");
+				Attendee attendee = new Attendee (1, "Omolara Adejuwon",
+						"me@email.com", "Speaker");
 				RoomApp.database.attendeeDao ().insert (attendee);
 				return RoomApp.database.attendeeDao ().getAllAttendees ();
 			}
